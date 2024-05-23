@@ -8,7 +8,7 @@ import YearLine from "./YearLine";
 const { Option } = Select;
 
 const DataTable = () => {
-  const { year } = useParams(); // Get the year parameter from the URL
+  const { year } = useParams(); 
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
   const [sortColumn, setSortColumn] = useState(null);
@@ -25,15 +25,15 @@ const DataTable = () => {
         }));
         setData(modifiedData);
 
-        setLoading(false); // Set loading to false when data is fetched
+        setLoading(false); 
       } catch (error) {
         console.error("Error fetching data:", error);
-        setLoading(false); // Set loading to false in case of error
+        setLoading(false);
       }
     };
 
     fetchData();
-  }, [year]); // Add year as a dependency
+  }, [year]); 
 
   const handleSortChange = (value) => {
     setSortColumn(value);
@@ -54,7 +54,7 @@ const DataTable = () => {
       title: "Average Salary in USD",
       dataIndex: "Average Salary in USD",
       key: "averageSalary",
-      render: (text) => parseFloat(text).toFixed(2), // round off to 2 decimal places
+      render: (text) => parseFloat(text).toFixed(2), 
     },
     {
       title: "Total Count",
@@ -80,7 +80,7 @@ const DataTable = () => {
     });
   };
 
-  // Calculate max/min jobs and average salary
+
   const maxJobTitle = data.reduce(
     (prev, current) =>
       prev["Total Count"] > current["Total Count"] ? prev : current,

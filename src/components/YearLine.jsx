@@ -9,14 +9,12 @@ const LineGraph = ({ data }) => {
     setLoading(false);
   }, []);
 
-  // Aggregate data for frequency of job titles
   const frequencyData = data.map((item) => ({
     jobTitle: item.JobTitle,
     year: item.Year,
     totalCount: item["Total Count"],
   }));
 
-  // Aggregate data for average salary by job title
   const avgSalaryData = data.map((item) => ({
     jobTitle: item.JobTitle,
     year: item.Year,
@@ -34,7 +32,7 @@ const LineGraph = ({ data }) => {
       title: {
         text: "Frequency",
       },
-      min: 0, // Ensure y-axis starts at 0
+      min: 0, 
     },
     xAxis: {
       title: {
@@ -58,7 +56,7 @@ const LineGraph = ({ data }) => {
       title: {
         text: "Average Salary in USD",
       },
-      min: 0, // Ensure y-axis starts at 0
+      min: 0, 
     },
     xAxis: {
       title: {

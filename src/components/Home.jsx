@@ -24,7 +24,7 @@ const DataTable = () => {
         setLoading(false);
       } catch (error) {
         console.error("Error fetching data:", error);
-        setLoading(false); // Set loading to false in case of error
+        setLoading(false); 
       }
     };
 
